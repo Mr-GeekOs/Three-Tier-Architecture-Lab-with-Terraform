@@ -55,7 +55,7 @@ rds_sg_description                        = "demo-rds-sg"
 rds_sg_tags                               = { "Name" = "demo-rds-sg", "created-by" = "terraform" }
 rds_identifier                            = "demo-rds"
 rds_mysql_engine                          = "mysql"
-rds_engine_version                        = "8.0.27"
+rds_engine_version                        = "8.0.35"
 rds_family                                = "mysql8.0" # DB parameter group
 rds_major_engine_version                  = "8.0"      # DB option group
 rds_instance_class                        = "db.t2.small"

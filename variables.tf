@@ -295,13 +295,13 @@ variable "rds_identifier" {
 variable "rds_mysql_engine" {
   description = "Relational database service mysql engine"
   type        = string
-  default     = "mysql"
+  default     = "MySQL"
 }
 
 variable "rds_engine_version" {
   description = "Relational database service mysql engine version"
   type        = string
-  default     = "8.0.27"
+  default     = "8.0.35"
 }
 
 variable "rds_family" {
@@ -319,7 +319,7 @@ variable "rds_major_engine_version" {
 variable "rds_instance_class" {
   description = "Relational database service instance class"
   type        = string
-  default     = "db.t2.small"
+  default     = "db.t2.micro"
 }
 
 variable "rds_allocated_storage" {

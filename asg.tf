@@ -36,7 +36,7 @@ sed -i 's/localhost/${module.rds.db_instance_address}/g' config.inc.php
 
 module "asg_sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "~> 4.0"
+  version = "~> 5.1.0"
 
   name        = var.asg_sg_name
   description = var.asg_sg_description
@@ -61,6 +61,7 @@ module "asg_sg" {
 
 module "asg" {
   source = "terraform-aws-modules/autoscaling/aws"
+  version = "7.3.1"
 
   # Autoscaling group
   name = var.asg_name

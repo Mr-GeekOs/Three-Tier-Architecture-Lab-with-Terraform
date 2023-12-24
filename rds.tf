@@ -4,7 +4,7 @@
 
 module "security_group" {
   source      = "terraform-aws-modules/security-group/aws"
-  version     = "~> 4.0"
+  version     = "5.1.0"
   name        = var.rds_sg_name
   description = var.rds_sg_description
   vpc_id      = module.vpc.vpc_id
@@ -24,7 +24,7 @@ module "security_group" {
 
 module "rds" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "5.1.0"
+  version = "6.3.0"
   # insert the 1 required variable here
   identifier = var.rds_identifier
   # All available versions: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt

@@ -661,9 +661,9 @@ output "db_instance_hosted_zone_id" {
   description = "The canonical hosted zone ID of the DB instance (to be used in a Route 53 Alias record)"
   value       = module.rds.db_instance_hosted_zone_id
 }
-output "db_instance_id" {
+output "db_instance_identifier" {
   description = "The RDS instance ID"
-  value       = module.rds.db_instance_id
+  value       = module.rds.db_instance_identifier
 }
 output "db_instance_resource_id" {
   description = "The RDS Resource ID of this instance"
@@ -680,11 +680,6 @@ output "db_instance_name" {
 output "db_instance_username" {
   description = "The master username for the database"
   value       = module.rds.db_instance_username
-  sensitive   = true
-}
-output "db_instance_password" {
-  description = "The database password (this password may be old, because Terraform doesn't track it after initial creation)"
-  value       = module.rds.db_instance_password
   sensitive   = true
 }
 output "db_instance_port" {
