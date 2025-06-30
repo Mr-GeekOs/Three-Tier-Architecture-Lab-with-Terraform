@@ -39,6 +39,7 @@ module "rds" {
 
   db_name  = var.rds_db_name
   username = var.rds_username
+  password = var.rds_password
   port     = var.rds_port
 
   multi_az               = var.rds_multi_az

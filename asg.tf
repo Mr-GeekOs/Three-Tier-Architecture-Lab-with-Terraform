@@ -50,6 +50,14 @@ module "asg_sg" {
   ]
   number_of_computed_ingress_with_source_security_group_id = 1
 
+  ingress_with_cidr_blocks = [
+    {
+      rule        = "ssh-tcp"
+      cidr_blocks = "0.0.0.0/0"
+      description = "SSH access from anywhere"
+    }
+  ]
+
   egress_rules = ["all-all"]
 
   tags = var.asg_sg_tags
@@ -84,6 +92,7 @@ module "asg" {
   instance_type     = var.asg_instance_type
   ebs_optimized     = var.asg_ebs_optimized
   enable_monitoring = var.asg_enable_monitoring
+  key_name          = aws_key_pair.ec2_key_pair.key_name
 
   # IAM role & instance profile
   create_iam_instance_profile = var.asg_create_iam_instance_profile

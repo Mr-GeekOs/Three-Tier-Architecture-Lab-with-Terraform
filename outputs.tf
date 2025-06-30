@@ -718,3 +718,19 @@ output "db_instance_cloudwatch_log_groups" {
   description = "Map of CloudWatch log groups created and their attributes"
   value       = module.rds.db_instance_cloudwatch_log_groups
 }
+
+# Bastion Host Outputs
+output "bastion_public_ip" {
+  description = "Elastic IP address of the bastion host"
+  value       = aws_eip.bastion.public_ip
+}
+
+output "bastion_ssh_command" {
+  description = "SSH command to connect to bastion host"
+  value       = "ssh -i ssh/inv-manager-key.pem ec2-user@${aws_eip.bastion.public_ip}"
+}
+
+output "bastion_to_ec2_ssh_command" {
+  description = "SSH command to connect from bastion to EC2 instances"
+  value       = "ssh -i ssh/inv-manager-key.pem ec2-user@<EC2-PRIVATE-IP>"
+}
